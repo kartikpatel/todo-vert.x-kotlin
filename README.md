@@ -1,4 +1,4 @@
-# todo-vert.x-kotlin-postgres
+# todo-vert.x-kotlin
 Todo Backend showcase using Vert.x and Postgres
 
 ## Steps to Compile
