@@ -41,12 +41,12 @@ application {
     mainClassName = "io.vertx.core.Launcher"
 }
 
-val shadowJar = task("fatShadowJar", type= ShadowJar::class){
-    classifier="fat"
-    mergeServiceFiles{
+val shadowJar = tasks.withType<ShadowJar> {
+    classifier = "fat"
+    mergeServiceFiles {
         include("META-INF/services/io.vertx.core.spi.VerticleFactory")
     }
-    manifest{
+    manifest {
         attributes(mapOf("Main-Class" to application.mainClassName, "Main-Verticle" to mainVerticalName))
     }
 }
